@@ -114,14 +114,22 @@ class Num2WordsPLTest(TestCase):
         self.assertEqual(num2words(1000, lang='pl', to='ordinal'), "tysięczny")
         self.assertEqual(num2words(10000, lang='pl',
                                    to='ordinal'), "dziesięciotysięczny")
-        self.assertEqual(num2words(100000000, lang='pl',
-                                   to='ordinal'), "stumilionowy")
+        self.assertEqual(num2words(30000, lang='pl',
+                                   to='ordinal'), "trzydziestotysięczny")
+        self.assertEqual(num2words(500000, lang='pl',
+                                   to='ordinal'), "pięćsettysięczny")
+        self.assertEqual(num2words(800000, lang='pl',
+                                   to='ordinal'), "osiemsettysięczny")
         self.assertEqual(num2words(1002000, lang='pl',
                                    to='ordinal'), "milion dwutysięczny")
         self.assertEqual(num2words(1001000, lang='pl',
                                    to='ordinal'), "milion tysięczny")
         self.assertEqual(num2words(1000000, lang='pl',
                                    to='ordinal'), "milionowy")
+        self.assertEqual(num2words(100000000, lang='pl',
+                                   to='ordinal'), "stumilionowy")
+        self.assertEqual(num2words(1000000000, lang='pl',
+                                   to='ordinal'), "miliardowy")
 
     def test_to_ordinal_error(self):
         with self.assertRaises(NotImplementedError):
